@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Marché Politique de 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  :root {
+    --red: #C0392B;
+    --dark-red: #922B21;
+    --black: #1A1A1A;
+    --dark-blue: #1B2A4A;
+    --accent-blue: #2E75B6;
+    --warm-gray: #F5F3F0;
+    --medium-gray: #666;
+    --light-gray: #E8E6E3;
+    --cream: #FDFCFA;
+    --page-width: 210mm;
+    --page-min-height: 297mm;
+  }
+
+  html { font-size: 10px; }
+  
+  body {
+    background: #D0CEC8;
+    font-family: 'Libre Baskerville', 'Georgia', serif;
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ PAGE SHELL ============ */
+  .page {
+    width: var(--page-width);
+    min-height: var(--page-min-height);
+    margin: 20mm auto;
+    background: var(--cream);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-inner {
+    padding: 8mm 10mm 10mm;
+  }
+
+  /* ============ MASTHEAD / HEADER ============ */
+  .masthead-bar {
+    background: var(--black);
+    color: white;
+    padding: 2.5mm 10mm;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .masthead-bar .red-label {
+    background: var(--red);
+    color: white;
+    padding: 1mm 3mm;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .journal-title-block {
+    text-align: center;
+    padding: 5mm 0 3mm;
+    border-bottom: 0.8mm solid var(--black);
+    position: relative;
+  }
+  .journal-title-block::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.3mm;
+    background: var(--black);
+    margin-bottom: 2mm;
+  }
+  .journal-subtitle {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--medium-gray);
+    margin-bottom: 2mm;
+  }
+  .journal-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--black);
+    letter-spacing: -0.02em;
+  }
+  .journal-name .le { font-size: 2.6rem; font-weight: 400; font-style: italic; vertical-align: 0.15em; margin-right: 0.1em; }
+  .journal-name .red-word { color: var(--red); }
+  .journal-info {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+    margin-top: 2mm;
+    letter-spacing: 0.05em;
+  }
+
+  /* ============ PAGE HEADER (pages 2-4) ============ */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5mm solid var(--black);
+    padding-bottom: 2mm;
+    margin-bottom: 5mm;
+  }
+  .page-header .journal-name-small {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--black);
+  }
+  .page-header .journal-name-small .le { font-size: 1rem; font-style: italic; font-weight: 400; }
+  .page-header .journal-name-small .red-word { color: var(--red); }
+  .page-header-meta {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+    text-align: right;
+  }
+  .page-header-section {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--red);
+  }
+
+  /* ============ TYPOGRAPHY ============ */
+  h1.cover-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.4rem;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--black);
+    margin: 4mm 0 3mm;
+  }
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--black);
+    margin: 0 0 3mm;
+    border-bottom: 0.4mm solid var(--red);
+    padding-bottom: 2mm;
+  }
+  h3.article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--black);
+    margin: 0 0 2mm;
+  }
+  h4.sub-heading {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--dark-blue);
+    margin: 4mm 0 2mm;
+  }
+
+  .chapeau {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.55;
+    color: #444;
+    margin-bottom: 4mm;
+  }
+
+  .body-text {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--black);
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-bottom: 2.5mm;
+  }
+  .body-text strong { font-weight: 700; }
+  .body-text em { font-style: italic; }
+
+  .body-text-sans {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--black);
+    text-align: justify;
+    margin-bottom: 2.5mm;
+  }
+
+  /* Lettrine / Drop cap */
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.8rem;
+    font-weight: 900;
+    float: left;
+    line-height: 0.75;
+    margin: 0.08em 0.12em 0 0;
+    color: var(--red);
+  }
+
+  /* ============ COVER PAGE SPECIFIC ============ */
+  .cover-tag {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 1.5mm 4mm;
+    margin: 4mm 0 1mm;
+  }
+
+  .cover-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--dark-blue);
+    line-height: 1.3;
+    margin-bottom: 4mm;
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    height: 62mm;
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 40%, #1A252F 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 4mm 0;
+  }
+  .hero-image-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255,255,255,0.03) 8px,
+      rgba(255,255,255,0.03) 16px
+    );
+  }
+  .hero-image-placeholder .placeholder-text {
+    font-family: 'Source Sans 3', sans-serif;
+    color: rgba(255,255,255,0.5);
+    font-size: 1.1rem;
+    text-align: center;
+    z-index: 1;
+    border: 1px dashed rgba(255,255,255,0.3);
+    padding: 4mm 6mm;
+  }
+
+  /* ============ MULTI-COLUMN LAYOUTS ============ */
+  .two-col {
+    column-count: 2;
+    column-gap: 6mm;
+    column-rule: 0.3mm solid var(--light-gray);
+  }
+  .three-col {
+    column-count: 3;
+    column-gap: 5mm;
+    column-rule: 0.3mm solid var(--light-gray);
+  }
+  .no-break { break-inside: avoid; }
+
+  /* ============ PULL QUOTE ============ */
+  .pull-quote {
+    border-left: 1mm solid var(--red);
+    padding: 3mm 0 3mm 4mm;
+    margin: 4mm 0;
+    break-inside: avoid;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--dark-blue);
+  }
+
+  /* ============ ENCADRÉ / INFO BOX ============ */
+  .encadre {
+    background: var(--warm-gray);
+    border-left: 1mm solid var(--accent-blue);
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+    break-inside: avoid;
+  }
+  .encadre-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2mm;
+  }
+  .encadre p, .encadre li {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--black);
+  }
+  .encadre ul { list-style: none; padding: 0; }
+  .encadre li { padding: 0.8mm 0; }
+  .encadre li::before { content: '■ '; color: var(--accent-blue); font-size: 0.7rem; vertical-align: 0.1em; margin-right: 1mm; }
+
+  /* ============ INFOGRAPHIC TABLE ============ */
+  .infographic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3mm 0;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .infographic-table th {
+    background: var(--dark-blue);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 2mm 3mm;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .infographic-table td {
+    font-size: 0.85rem;
+    padding: 1.8mm 3mm;
+    border-bottom: 0.2mm solid var(--light-gray);
+  }
+  .infographic-table tr:nth-child(even) td { background: var(--warm-gray); }
+  .bar-cell {
+    position: relative;
+  }
+  .bar {
+    display: inline-block;
+    height: 3.5mm;
+    border-radius: 0.5mm;
+    vertical-align: middle;
+    margin-right: 2mm;
+  }
+  .bar-rn { background: var(--dark-blue); }
+  .bar-centre { background: var(--accent-blue); }
+  .bar-gauche { background: var(--red); }
+  .bar-lfi { background: #E74C3C; }
+  .bar-divers { background: var(--medium-gray); }
+
+  /* ============ BOTTOM BAR (cover) ============ */
+  .cover-bottom-bar {
+    background: var(--red);
+    color: white;
+    padding: 2mm 4mm;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    gap: 3mm;
+    align-items: center;
+    margin-top: 3mm;
+  }
+  .cover-bottom-bar .label {
+    background: white;
+    color: var(--red);
+    padding: 0.5mm 2mm;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+
+  .cover-teasers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 0.5mm solid var(--black);
+    margin-top: 3mm;
+  }
+  .cover-teaser {
+    padding: 3mm 4mm;
+    border-right: 0.3mm solid var(--light-gray);
+  }
+  .cover-teaser:last-child { border-right: none; }
+  .cover-teaser .teaser-section {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--red);
+    margin-bottom: 1mm;
+  }
+  .cover-teaser h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--black);
+    margin-bottom: 1mm;
+  }
+  .cover-teaser p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    color: var(--medium-gray);
+  }
+
+  /* ============ AUTHOR LINE ============ */
+  .author-line {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--medium-gray);
+    margin-bottom: 3mm;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ============ DEFINITION BOX ============ */
+  .def-box {
+    background: white;
+    border: 0.3mm solid var(--light-gray);
+    border-top: 0.8mm solid var(--red);
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    break-inside: avoid;
+  }
+  .def-box-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5mm;
+  }
+  .def-box p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #444;
+  }
+  
+
+  /* ============ PAGE FOOTER ============ */
+  .page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 0.3mm solid var(--light-gray);
+    padding: 2mm 10mm;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.8rem;
+    color: var(--medium-gray);
+    background: var(--cream);
+  }
+
+  /* ============ SEPARATOR / FILET ============ */
+  .filet { border: none; border-top: 0.3mm solid var(--black); margin: 4mm 0; }
+  .filet-red { border: none; border-top: 0.6mm solid var(--red); margin: 3mm 0; }
+  .filet-thick { border: none; border-top: 0.8mm solid var(--black); margin: 4mm 0; }
+
+  /* ============ IMAGE PLACEHOLDER (inline) ============ */
+  .img-placeholder {
+    background: linear-gradient(145deg, #E8E6E3, #D5D3D0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3mm 0;
+    break-inside: avoid;
+  }
+  .img-placeholder span {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    color: var(--medium-gray);
+    text-align: center;
+    border: 1px dashed #BBB;
+    padding: 3mm 5mm;
+  }
+
+  /* ============ CONCLUSION PAGE ============ */
+  .editorial-box {
+    border: 0.5mm solid var(--black);
+    padding: 6mm;
+    margin: 5mm 0;
+  }
+  .editorial-box .editorial-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--red);
+    margin-bottom: 2mm;
+  }
+
+  /* Sources */
+  .sources-list {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.98rem;
+    line-height: 2.0;
+    color: var(--medium-gray);
+  }
+  .sources-list li { padding: 0.5mm 0; list-style: none; }
+  .sources-list li::before { content: '— '; color: var(--red); }
+
+  /* Page number circle */
+  .page-num {
+    display: inline-flex;
+    width: 6mm;
+    height: 6mm;
+    border-radius: 50%;
+    background: var(--dark-blue);
+    color: white;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Stats highlight */
+  .stat-number {
+  font-size: 4.2rem;  /* était 3.5rem */
+}
+.stat-label {
+  font-size: 1rem;    /* était 0.85rem */
+  margin-top: 2mm;
+}
+/* Plus de padding sur le bloc stats */
+.stat-highlight {
+  padding: 6mm 2mm;   /* était 4mm 2mm */
+}
+
+  .cover-teaser h4 {
+  font-size: 1.35rem;  /* était 1.1rem */
+  line-height: 1.3;
+  margin-bottom: 2mm;
+}
+.cover-teaser p {
+  font-size: 0.95rem;  /* était 0.75rem */
+  line-height: 1.65;   /* était 1.45 */
+}
+.cover-teaser .teaser-section {
+  font-size: 0.9rem;   /* était 0.75rem */
+  margin-bottom: 1.5mm;
+}
+.cover-teaser {
+  padding: 5mm 4mm;    /* était 3mm 4mm — plus de padding vertical */
+}
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================================ -->
+<!-- PAGE 1 — COUVERTURE                                              -->
+<!-- ================================================================ -->
+<div class="page" id="page1">
+
+  <!-- Top bar -->
+  <div class="masthead-bar">
+    <span><span class="red-label">Dossier Spécial</span>&ensp;PRÉSIDENTIELLE 2027</span>
+    <span>Mars 2026 — N°01 — 3,90 €</span>
+  </div>
+
+  <!-- Journal title -->
+  <div class="journal-title-block" style="padding: 4mm 10mm 3mm;">
+    <div class="journal-subtitle">Revue d'analyse politique et sociale</div>
+    <div class="journal-name"><span class="le">Le </span>Marché <span class="red-word">Politique</span></div>
+    <div class="journal-info">VENDREDI 31 MARS 2026&ensp;|&ensp;ÉDITION SPÉCIALE — ANALYSE SES&ensp;|&ensp;www.lemarchepolitique.fr</div>
+  </div>
+
+  <div class="page-inner" style="padding-top: 3mm; display: flex; flex-direction: column; min-height: calc(297mm - 12mm - 22px);">
+
+ <div class="hero-image-placeholder">
+  <img src="hero_cover.jpg" alt="Image principale" class="hero-image">
+</div>
+
+    <!-- Cover tag -->
+    <span class="cover-tag">Présidentielle 2027</span>
+
+    <!-- Headline -->
+    <h1 class="cover-headline">Le marché politique<br>de 2027</h1>
+
+    <!-- Subtitle -->
+    <div class="cover-subtitle">
+      Offre partisane, demande électorale&nbsp;: autopsie d'un scrutin sous haute incertitude
+    </div>
+
+    <!-- Chapeau -->
+    <p class="chapeau" style="padding: 0 0 3mm;">
+      À un peu plus d'un an de la prochaine élection présidentielle, la France politique ressemble à un marché en pleine restructuration. D'un côté, une offre partisane fragmentée, dominée par la poussée du Rassemblement national. De l'autre, une demande électorale volatile, défiante, et de moins en moins fidèle à un camp. Entre les deux, un immense espace d'incertitude.
+    </p>
+
+    <hr class="filet-red">
+
+    <!-- Bottom teasers -->
+    <div class="cover-teasers" style="flex: 1; align-items: stretch;">
+      <div class="cover-teaser">
+        <div class="teaser-section">Sondages</div>
+        <h4>Bardella en tête dans toutes les configurations</h4>
+        <p>Avec 35 à 38 % des intentions de vote, le président du RN domine le premier tour. Seul Édouard Philippe pourrait le battre au second.</p>
+      </div>
+      <div class="cover-teaser">
+        <div class="teaser-section">Baromètre</div>
+        <h4>22 % de confiance dans la politique&nbsp;: le record du CEVIPOF</h4>
+        <p>La 17e vague du baromètre de la confiance politique dresse un portrait alarmant de la démocratie française.</p>
+      </div>
+      <div class="cover-teaser">
+        <div class="teaser-section">Décryptage</div>
+        <h4>L'électeur de 2027&nbsp;: volatile, intermittent, déconnecté</h4>
+        <p>60 % des électeurs ne se sentent proches d'aucun parti. La volatilité électorale atteint des sommets historiques.</p>
+      </div>
+    </div>
+
+    <!-- Red bottom bar -->
+    <div class="cover-bottom-bar">
+      <span class="label">Analyse</span>
+      <span>Fondée sur les données Elabe, Ifop, Odoxa, Toluna Harris Interactive, CEVIPOF — Cours de SES, Chapitre 10</span>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span><span class="page-num">1</span>&ensp;Couverture</span>
+    <span>Le Marché Politique — Mars 2026</span>
+  </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 2 — PARTIE I : L'OFFRE POLITIQUE                            -->
+<!-- ================================================================ -->
+<div class="page" id="page2">
+  <div class="page-inner">
+
+    <div class="page-header">
+      <div>
+        <span class="journal-name-small"><span class="le">Le </span>Marché <span class="red-word">Politique</span></span>
+      </div>
+      <div class="page-header-meta">
+        <div class="page-header-section">Partie I — L'offre politique</div>
+        Mars 2026 — Présidentielle 2027
+      </div>
+    </div>
+
+    <h2 class="section-title">I. L'offre politique&nbsp;: un paysage en recomposition permanente</h2>
+
+    <p class="author-line">Par la rédaction du Marché Politique</p>
+
+    <div class="two-col">
+
+      <p class="body-text drop-cap no-break">
+        Depuis la séquence électorale de 2017, le système partisan français a connu une défragmentation accélérée. L'irruption d'Emmanuel Macron avait déjà déstabilisé le <strong>clivage droite/gauche</strong> — c'est-à-dire la division traditionnelle de l'espace politique entre un pôle conservateur et un pôle progressiste, structurant l'offre électorale depuis les années 1970. En 2017, 37&nbsp;% des Français se situaient à gauche et 25&nbsp;% à droite.
+      </p>
+
+      <p class="body-text no-break">
+        Macron, en aspirant les électorats modérés des deux camps, a accéléré l'érosion des blocs&nbsp;: selon les données du CEVIPOF, le <strong>bloc de gauche</strong> est passé de 41&nbsp;% en 2001 à 29&nbsp;% en 2021, tandis que le <strong>bloc de droite</strong> s'est effondré de 44&nbsp;% à 18&nbsp;% sur la même période. Le résultat&nbsp;? Un paysage où les blocs historiques sont des ruines, et où la <strong>volatilité électorale</strong> — la variation des préférences politiques d'un scrutin à l'autre — n'a jamais été aussi élevée.
+      </p>
+
+      <div class="def-box no-break">
+        <div class="def-box-title">Définition — Volatilité électorale</div>
+        <p>Variation des préférences politiques et du vote d'un électeur d'un scrutin à l'autre. Elle renforce le caractère imprévisible du vote et affaiblit la fidélité partisane traditionnelle.</p>
+      </div>
+
+      <p class="body-text no-break">
+        En mars 2026, après les élections municipales et la réélection d'Édouard Philippe au Havre, le paysage s'organise autour de quatre grands pôles&nbsp;: l'extrême droite (RN), la droite et le centre (Horizons, Renaissance, LR), la gauche socialiste et écologiste, et la gauche radicale (LFI). Mais les frontières entre ces blocs sont poreuses, et aucune force politique ne parvient à parler à l'ensemble du pays.
+      </p>
+
+      <h4 class="sub-heading no-break">Les intentions de vote&nbsp;: radiographie d'un rapport de forces</h4>
+
+      <p class="body-text no-break">
+        Les sondages de début 2026 dressent un tableau remarquablement stable. <strong>Jordan Bardella</strong> domine le premier tour dans toutes les configurations testées, avec des scores oscillant entre 34 et 38,5&nbsp;% des intentions de vote selon les enquêtes (Elabe, Ifop, Odoxa, Toluna Harris Interactive). Marine Le Pen, si elle venait à être candidate, recueillerait autour de 31 à 34&nbsp;%. Le RN bénéficie d'un électorat désormais qualifié d'«&nbsp;attrape-tout&nbsp;» par l'Ifop&nbsp;: il performe aussi bien chez les salariés (38&nbsp;%) que chez les retraités (33&nbsp;%).
+      </p>
+
+      <p class="body-text no-break">
+        <strong>Édouard Philippe</strong> s'impose comme le principal challenger, crédité de 16 à 25,5&nbsp;% selon les scénarios, en nette progression depuis sa réélection municipale. Gabriel Attal plafonne à 11-13&nbsp;%, tandis que Bruno Retailleau (LR) se situe autour de 8-10&nbsp;%.
+      </p>
+
+      <p class="body-text no-break">
+        À gauche, le duel Glucksmann-Mélenchon structure l'espace. <strong>Raphaël Glucksmann</strong> (Place Publique/PS) est crédité de 10,5 à 14&nbsp;%, en légère hausse&nbsp;: il a pris le leadership à gauche après les tensions entre PS et LFI lors des municipales. <strong>Jean-Luc Mélenchon</strong> recule à 10,5-12&nbsp;%, en perte de 2 à 3 points. Marine Tondelier (EELV) ne dépasse pas les 5&nbsp;%.
+      </p>
+
+    </div>
+
+    <!-- INFOGRAPHIC TABLE -->
+    <div style="margin-top: 4mm;">
+      <div class="encadre-title" style="margin-bottom: 2mm;">📊 Répartition estimée des forces — Premier tour (sondage de mars 2026)</div>
+      <table class="infographic-table">
+        <thead>
+          <tr>
+            <th>Bloc politique</th>
+            <th>Candidat principal</th>
+            <th>Intentions de vote</th>
+            <th style="width: 35%;">Rapport de forces</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Extrême droite (RN)</strong></td>
+            <td>Jordan Bardella</td>
+            <td><strong>34 — 38 %</strong></td>
+            <td class="bar-cell"><span class="bar bar-rn" style="width: 75%;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Centre-droit</strong></td>
+            <td>Édouard Philippe</td>
+            <td><strong>16 — 25 %</strong></td>
+            <td class="bar-cell"><span class="bar bar-centre" style="width: 48%;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Gauche soc.-dém.</strong></td>
+            <td>Raphaël Glucksmann</td>
+            <td><strong>10 — 14 %</strong></td>
+            <td class="bar-cell"><span class="bar bar-gauche" style="width: 28%;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Gauche radicale</strong></td>
+            <td>Jean-Luc Mélenchon</td>
+            <td><strong>10 — 12 %</strong></td>
+            <td class="bar-cell"><span class="bar bar-lfi" style="width: 24%;"></span></td>
+          </tr>
+          <tr>
+            <td><strong>Divers droite</strong></td>
+            <td>Zemmour, Villepin…</td>
+            <td><strong>3 — 6 %</strong></td>
+            <td class="bar-cell"><span class="bar bar-divers" style="width: 11%;"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; color: var(--medium-gray); margin-top: 1mm;">
+        Sources&nbsp;: synthèse Elabe, Ifop-Fiducial, Odoxa-Mascaret, Toluna Harris Interactive — Mars 2026
+      </p>
+    </div>
+
+    <div style="margin-top: 4mm;">
+      <h4 class="sub-heading">Le vote utile&nbsp;: l'arme fatale du second tour</h4>
+      <div class="two-col">
+        <p class="body-text no-break">
+          Le <strong>vote utile</strong> — la décision pour un électeur de voter non pas pour son candidat préféré, mais pour celui qui a le plus de chances d'accéder au second tour — pourrait à nouveau jouer un rôle déterminant en 2027. En 2022, ce mécanisme avait massivement profité à Jean-Luc Mélenchon au premier tour&nbsp;: une large part de l'électorat NFP s'était regroupée derrière le candidat insoumis, jugé le plus à même de porter la gauche au second tour.
+        </p>
+        <p class="body-text no-break">
+          En 2027, la logique du vote utile s'annonce plus complexe et multi-directionnelle. À gauche, le leadership contesté entre Glucksmann et Mélenchon empêche la cristallisation d'un vote utile clair. Au centre-droit, si Édouard Philippe parvient à fédérer l'espace Horizons-Renaissance-LR, il pourrait concentrer un vote utile anti-RN. Les données Elabe de mars 2026 montrent que dans un duel Philippe-Bardella, l'ancien Premier ministre l'emporterait de justesse (51,5&nbsp;% contre 48,5&nbsp;%), grâce à d'excellents reports de voix de la gauche.
+        </p>
+
+        <div class="pull-quote no-break">
+          <p>«&nbsp;Le vote utile n'est plus une simple tactique de barrage&nbsp;: il devient un mode de scrutin parallèle, où chaque électeur intègre la probabilité de succès dans son calcul.&nbsp;»</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span><span class="page-num">2</span>&ensp;L'offre politique</span>
+    <span>Le Marché Politique — Mars 2026</span>
+  </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 3 — PARTIE II : LA DEMANDE ÉLECTORALE                      -->
+<!-- ================================================================ -->
+<div class="page" id="page3">
+  <div class="page-inner">
+
+    <div class="page-header">
+      <div>
+        <span class="journal-name-small"><span class="le">Le </span>Marché <span class="red-word">Politique</span></span>
+      </div>
+      <div class="page-header-meta">
+        <div class="page-header-section">Partie II — La demande électorale</div>
+        Mars 2026 — Présidentielle 2027
+      </div>
+    </div>
+
+    <h2 class="section-title">II. La demande électorale&nbsp;: ce que veulent les Français</h2>
+
+    <!-- Stats row -->
+    <div style="display: flex; gap: 0; margin: 3mm 0 4mm; border: 0.3mm solid var(--light-gray);">
+      <div class="stat-highlight" style="flex: 1; border-right: 0.3mm solid var(--light-gray);">
+        <div class="stat-number">22 %</div>
+        <div class="stat-label">de confiance dans<br>la politique (CEVIPOF 2026)</div>
+      </div>
+      <div class="stat-highlight" style="flex: 1; border-right: 0.3mm solid var(--light-gray);">
+        <div class="stat-number">15 %</div>
+        <div class="stat-label">font confiance aux<br>partis politiques</div>
+      </div>
+      <div class="stat-highlight" style="flex: 1; border-right: 0.3mm solid var(--light-gray);">
+        <div class="stat-number">42 %</div>
+        <div class="stat-label">d'abstention aux<br>municipales 2026</div>
+      </div>
+      <div class="stat-highlight" style="flex: 1;">
+        <div class="stat-number">82 %</div>
+        <div class="stat-label">restent attachés au<br>régime démocratique</div>
+      </div>
+    </div>
+
+    <h4 class="sub-heading">Le triptyque pouvoir d'achat, sécurité, immigration</h4>
+
+    <div class="three-col" style="font-size: 1.05rem; line-height: 1.8;">
+
+      <p class="body-text drop-cap no-break">
+        Les enquêtes d'opinion convergent&nbsp;: les trois priorités des Français pour 2026-2027 sont le pouvoir d'achat, la sécurité et l'immigration. Selon le baromètre Odoxa-Backbone Consulting de décembre 2025, le pouvoir d'achat reste la préoccupation majeure, suivi par la sécurité — en forte hausse après des faits divers médiatisés — puis l'immigration (35&nbsp;% de citations).
+      </p>
+
+      <p class="body-text no-break">
+        L'environnement recule nettement&nbsp;: le CEVIPOF note une baisse de 11 points en trois ans de la proportion de Français jugeant le dérèglement climatique prioritaire (46&nbsp;% en 2026 contre 57&nbsp;% en 2023). Cette hiérarchie des enjeux renforce structurellement le RN, historiquement positionné sur la sécurité et l'immigration.
+      </p>
+
+      <h4 class="sub-heading no-break">L'électeur 2027&nbsp;: volatile, défiant, intermittent</h4>
+
+      <p class="body-text no-break">
+        Lors de la présidentielle de 2022, sur 48,8 millions d'électeurs inscrits, <strong>69,3&nbsp;%</strong> avaient participé systématiquement aux deux tours, <strong>13,2&nbsp;%</strong> de manière intermittente, et <strong>17,4&nbsp;%</strong> s'étaient totalement abstenus. La <strong>participation intermittente</strong> — le fait de voter à certains scrutins et pas à d'autres — est le marqueur d'un électorat de plus en plus nomade.
+      </p>
+
+      <p class="body-text no-break">
+        L'érosion de l'identité partisane confirme cette tendance. En 2013, seulement 10&nbsp;% des Français déclaraient n'avoir de sympathie pour aucun parti. En 2021, ce chiffre avait bondi à 35&nbsp;%. Aujourd'hui, 60&nbsp;% des électeurs se déclarent proches d'aucune formation. Le baromètre CEVIPOF 2026 enfonce le clou&nbsp;: seulement 15&nbsp;% des Français font confiance aux partis politiques.
+      </p>
+
+      <div class="def-box no-break">
+        <div class="def-box-title">Notion — Les déterminants sociaux du vote</div>
+        <p><strong>Sexe&nbsp;:</strong> les femmes votent historiquement plus à gauche, mais l'écart se resserre. <strong>Âge&nbsp;:</strong> les jeunes s'abstiennent davantage et votent plus aux extrêmes. <strong>Diplôme&nbsp;:</strong> plus de diplôme oriente vers le centre ; moins de diplôme vers l'extrême droite. <strong>Classe sociale&nbsp;:</strong> les classes populaires penchent vers le RN, les cadres vers le centre-droit. <strong>Religion&nbsp;:</strong> la pratique catholique reste un prédicteur du vote de droite.</p>
+      </div>
+
+      <h4 class="sub-heading no-break">Quel profil de candidat peut gagner&nbsp;?</h4>
+
+      <p class="body-text no-break">
+        Dans un contexte de défiance généralisée, les électeurs ne cherchent plus seulement un programme&nbsp;: ils cherchent une personnalité crédible. Le cours de SES identifie trois critères que les électeurs mettent en balance&nbsp;: le <strong>charisme</strong>, la capacité à <strong>représenter leurs idées</strong>, et le <strong>bilan</strong>.
+      </p>
+
+      <p class="body-text no-break">
+        Édouard Philippe coche plusieurs de ces cases. Auprès des sympathisants de droite et du centre, il suscite 76&nbsp;% d'adhésion selon Odoxa. Sa stature d'ancien Premier ministre lui confère un «&nbsp;bilan&nbsp;», même contesté. À l'inverse, Jordan Bardella incarne un charisme générationnel sans bilan exécutif — mais porté par 39&nbsp;% d'opinions favorables, il est la personnalité politique préférée des Français. La gauche, fragmentée, peine à faire émerger une figure qui rassemble au-delà de son camp.
+      </p>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <h4 class="sub-heading no-break">Abstention vs. mobilisation&nbsp;: l'équation décisive</h4>
+
+      <p class="body-text no-break">
+        L'<strong>abstention</strong> — le fait de ne pas participer au vote malgré son inscription sur les listes électorales — constitue le joker de 2027. Les municipales de mars 2026 ont enregistré 42,18&nbsp;% d'abstention au second tour, un record hors période Covid.
+      </p>
+
+      <p class="body-text no-break">
+        Le CEVIPOF note que 80&nbsp;% des Français estiment que le gouvernement «&nbsp;navigue à vue&nbsp;», et que 88&nbsp;% considèrent que les élus n'assument pas leurs échecs. Paradoxalement, cette défiance n'est pas un rejet de la démocratie&nbsp;: 82&nbsp;% des Français restent attachés au régime démocratique, et 72&nbsp;% réclament une démocratie plus participative. Le problème n'est pas le principe, c'est son incarnation.
+      </p>
+
+      <div class="pull-quote no-break">
+        <p>«&nbsp;78&nbsp;% des Français ne font pas confiance en la politique. Pourtant, 82&nbsp;% louent le principe de la démocratie. Le problème n'est pas le régime, c'est ses acteurs.&nbsp;»</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span><span class="page-num">3</span>&ensp;La demande électorale</span>
+    <span>Le Marché Politique — Mars 2026</span>
+  </div>
+</div>
+
+
+<!-- ================================================================ -->
+<!-- PAGE 4 — CONCLUSION                                              -->
+<!-- ================================================================ -->
+<div class="page" id="page4">
+  <div class="page-inner">
+
+    <div class="page-header">
+      <div>
+        <span class="journal-name-small"><span class="le">Le </span>Marché <span class="red-word">Politique</span></span>
+      </div>
+      <div class="page-header-meta">
+        <div class="page-header-section">Éditorial — Conclusion</div>
+        Mars 2026 — Présidentielle 2027
+      </div>
+    </div>
+
+    <h2 class="section-title" style="border-bottom-color: var(--black);">Un marché ouvert, un résultat incertain</h2>
+
+    <p class="author-line">Éditorial de clôture</p>
+
+    <div class="two-col" style="font-size: 1.05rem; line-height: 1.85;">
+
+      <p class="body-text drop-cap no-break">
+        Le «&nbsp;marché politique de 2027&nbsp;» est celui de tous les paradoxes. Un candidat du RN qui domine tous les sondages de premier tour mais qui pourrait être battu au second. Un bloc central en recomposition derrière une figure unique. Une gauche fragmentée qui n'a pas encore trouvé son vote utile. Et, en toile de fond, un électorat plus volatile, plus défiant et plus intermittent que jamais.
+      </p>
+
+      <p class="body-text no-break">
+        Les déterminants sociaux du vote — âge, diplôme, classe sociale — continueront de structurer les comportements. Mais la variable décisive de 2027 sera peut-être la capacité des candidats à mobiliser un électorat qui ne demande qu'à participer… à condition qu'on lui donne une raison de le faire.
+      </p>
+
+      <div class="editorial-box no-break">
+        <div class="editorial-label">Le mot de la rédaction</div>
+        <p class="body-text" style="margin-bottom: 0;">
+          Cet article a été rédigé dans le cadre du cours de Sciences Économiques et Sociales — Chapitre 10&nbsp;: Vote et participation électorale en France. Il mobilise les notions du programme (abstention, volatilité électorale, vote utile, déterminants sociaux du vote, clivage droite/gauche) comme outils d'analyse d'une situation politique réelle, enrichies par les données les plus récentes des instituts de sondage et du baromètre CEVIPOF 2026.
+        </p>
+      </div>
+
+    <div class="no-break">
+  <img src="editorial_img.jpg" alt="Image éditoriale" style="height: 45mm; width: 100%; object-fit: cover;">
+</div>
+
+      <p class="body-text no-break">
+        Le marché est ouvert. Les preneurs restent à désigner. Ce qui est certain, c'est que 2027 ne sera pas 2022. La dissolution de 2024 a fragilisé tous les repères, les municipales de 2026 ont confirmé l'émiettement partisan, et la défiance atteint un niveau inédit. L'électeur français de 2027 sera plus éduqué, plus informé — mais aussi plus critique, plus nomade, et moins captif qu'aucune autre génération avant lui.
+      </p>
+
+      <p class="body-text no-break">
+        Les sondages, rappelons-le, ne sont qu'une photographie à un instant donné. Comme le souligne Gaël Sliman (Odoxa)&nbsp;: une intention de vote à plus d'un an d'une présidentielle n'a aucune valeur prédictive. Reste que les tendances de fond — la montée de la volatilité, l'effondrement de la confiance partisane, la polarisation des enjeux — ne sont pas des artefacts statistiques. Elles sont les coordonnées d'un paysage électoral profondément recomposé.
+      </p>
+
+    </div>
+
+    <hr class="filet-thick">
+
+    <!-- SOURCES -->
+    <div style="margin-top: 3mm;">
+      <div class="encadre-title">📒 Sources et références</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm;">
+        <ul class="sources-list">
+          <li>Cours de SES — Chapitre 10&nbsp;: Vote et participation électorale</li>
+          <li>Baromètre CEVIPOF de la confiance politique, vague 17 (fév. 2026)</li>
+          <li>Sondage Elabe pour BFMTV / La Tribune Dimanche (25-27 mars 2026)</li>
+          <li>Sondage Ifop-Fiducial pour Sud Radio / Le Figaro (fév. 2026)</li>
+        </ul>
+        <ul class="sources-list">
+          <li>Sondage Odoxa-Mascaret pour Public Sénat (mars 2026)</li>
+          <li>Sondage Toluna Harris Interactive pour RTL-M6 (22 mars 2026)</li>
+          <li>Baromètre Odoxa-Backbone Consulting pour Le Figaro (déc. 2025)</li>
+          <li>Données électorales INSEE — Présidentielle 2022</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="filet">
+
+    <!-- GLOSSAIRE -->
+    <div style="margin-top: 2mm;">
+      <div class="encadre-title">🔑 Définition des notions mobilisées</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm; font-family: 'Source Sans 3', sans-serif; font-size: 0.82rem; line-height: 1.5;">
+        <div>
+          <p><strong>Abstention&nbsp;:</strong> Non-participation au vote malgré l'inscription électorale. Taux = (abstentionnistes / inscrits) × 100.</p>
+          <p style="margin-top: 1.5mm;"><strong>Volatilité électorale&nbsp;:</strong> Variation des préférences et du vote d'un scrutin à l'autre.</p>
+          <p style="margin-top: 1.5mm;"><strong>Vote utile&nbsp;:</strong> Choix de voter pour un candidat qui n'est pas son premier choix mais qui a le plus de chances de gagner.</p>
+        </div>
+        <div>
+          <p><strong>Clivage droite/gauche&nbsp;:</strong> Division traditionnelle de l'espace politique entre conservateurs et progressistes.</p>
+          <p style="margin-top: 1.5mm;"><strong>Déterminants sociaux du vote&nbsp;:</strong> Variables (sexe, âge, diplôme, classe sociale, religion) influençant la participation et l'orientation du vote.</p>
+          <p style="margin-top: 1.5mm;"><strong>Participation intermittente&nbsp;:</strong> Comportement consistant à voter à certains scrutins mais pas à d'autres.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="filet">
+
+    <!-- COLOPHON -->
+    <div style="text-align: center; margin-top: 3mm; padding: 3mm;">
+      <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--black);"><span style="font-size: 1rem; font-style: italic; font-weight: 400;">Le </span>Marché <span style="color: var(--red);">Politique</span></div>
+      <p style="font-family: 'Source Sans 3', sans-serif; font-size: 0.8rem; color: var(--medium-gray); margin-top: 1mm;">
+        Édition spéciale — Analyse SES — Chapitre 10 : Vote et participation électorale en France<br>
+      Mars 2026
+      </p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span><span class="page-num">4</span>&ensp;Conclusion</span>
+    <span>Le Marché Politique — Mars 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
