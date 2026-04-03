@@ -564,25 +564,79 @@
 }
 
   .cover-teaser h4 {
-  font-size: 1.35rem;  /* était 1.1rem */
-  line-height: 1.3;
-  margin-bottom: 2mm;
+  font-size: 1.55rem;
+  line-height: 1.35;
+  margin-bottom: 2.5mm;
 }
 .cover-teaser p {
-  font-size: 0.95rem;  /* était 0.75rem */
-  line-height: 1.65;   /* était 1.45 */
+  font-size: 1.08rem;
+  line-height: 1.75;
 }
 .cover-teaser .teaser-section {
-  font-size: 0.9rem;   /* était 0.75rem */
-  margin-bottom: 1.5mm;
+  font-size: 1rem;
+  margin-bottom: 2mm;
 }
 .cover-teaser {
-  padding: 5mm 4mm;    /* était 3mm 4mm — plus de padding vertical */
+  padding: 6mm 5mm;
 }
 
   @media print {
     body { background: white; }
     .page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+
+  /* ============ PULL-QUOTE — PAGE-BREAK FIX ============ */
+  .pull-quote {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .vote-utile-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ============ SOURCES — MISE EN PAGE ÉLÉGANTE ============ */
+  .sources-elegant-wrap {
+    margin: 2mm 0;
+    border: 0.3mm solid var(--light-gray);
+    border-top: 0.8mm solid var(--dark-blue);
+  }
+  .source-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 3mm;
+    padding: 2.5mm 4mm;
+    border-bottom: 0.2mm solid var(--light-gray);
+    break-inside: avoid;
+  }
+  .source-item:last-child { border-bottom: none; }
+  .source-item:nth-child(odd) { background: #F4F3F0; }
+  .source-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--red);
+    min-width: 7mm;
+    line-height: 1;
+    padding-top: 0.5mm;
+    flex-shrink: 0;
+  }
+  .source-content { flex: 1; }
+  .source-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.4;
+    display: block;
+  }
+  .source-detail {
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--medium-gray);
+    display: block;
+    margin-top: 0.5mm;
   }
 </style>
 </head>
@@ -769,7 +823,7 @@
       </p>
     </div>
 
-    <div style="margin-top: 4mm;">
+    <div class="vote-utile-block" style="margin-top: 4mm;">
       <h4 class="sub-heading">Le vote utile&nbsp;: l'arme fatale du second tour</h4>
       <div class="two-col">
         <p class="body-text no-break">
@@ -834,7 +888,7 @@
 
     <h4 class="sub-heading">Le triptyque pouvoir d'achat, sécurité, immigration</h4>
 
-    <div class="three-col" style="font-size: 1.05rem; line-height: 1.8;">
+    <div class="three-col" style="font-size: 1.12rem; line-height: 1.95;">
 
       <p class="body-text drop-cap no-break">
         Les enquêtes d'opinion convergent&nbsp;: les trois priorités des Français pour 2026-2027 sont le pouvoir d'achat, la sécurité et l'immigration. Selon le baromètre Odoxa-Backbone Consulting de décembre 2025, le pouvoir d'achat reste la préoccupation majeure, suivi par la sécurité — en forte hausse après des faits divers médiatisés — puis l'immigration (35&nbsp;% de citations).
@@ -868,11 +922,6 @@
       <p class="body-text no-break">
         Édouard Philippe coche plusieurs de ces cases. Auprès des sympathisants de droite et du centre, il suscite 76&nbsp;% d'adhésion selon Odoxa. Sa stature d'ancien Premier ministre lui confère un «&nbsp;bilan&nbsp;», même contesté. À l'inverse, Jordan Bardella incarne un charisme générationnel sans bilan exécutif — mais porté par 39&nbsp;% d'opinions favorables, il est la personnalité politique préférée des Français. La gauche, fragmentée, peine à faire émerger une figure qui rassemble au-delà de son camp.
       </p>
-
-      <br>
-      <br>
-      <br>
-      <br>
 
       <h4 class="sub-heading no-break">Abstention vs. mobilisation&nbsp;: l'équation décisive</h4>
 
@@ -954,20 +1003,64 @@
 
     <!-- SOURCES -->
     <div style="margin-top: 3mm;">
-      <div class="encadre-title">📒 Sources et références</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm;">
-        <ul class="sources-list">
-          <li>Cours de SES — Chapitre 10&nbsp;: Vote et participation électorale</li>
-          <li>Baromètre CEVIPOF de la confiance politique, vague 17 (fév. 2026)</li>
-          <li>Sondage Elabe pour BFMTV / La Tribune Dimanche (25-27 mars 2026)</li>
-          <li>Sondage Ifop-Fiducial pour Sud Radio / Le Figaro (fév. 2026)</li>
-        </ul>
-        <ul class="sources-list">
-          <li>Sondage Odoxa-Mascaret pour Public Sénat (mars 2026)</li>
-          <li>Sondage Toluna Harris Interactive pour RTL-M6 (22 mars 2026)</li>
-          <li>Baromètre Odoxa-Backbone Consulting pour Le Figaro (déc. 2025)</li>
-          <li>Données électorales INSEE — Présidentielle 2022</li>
-        </ul>
+      <div class="encadre-title" style="font-size: 1rem; margin-bottom: 2mm; letter-spacing: 0.12em;">Sources &amp; Références</div>
+      <div class="sources-elegant-wrap">
+        <div class="source-item">
+          <span class="source-num">1</span>
+          <div class="source-content">
+            <span class="source-title">Cours de SES — Chapitre 10&nbsp;: Vote et participation électorale en France</span>
+            <span class="source-detail">Programme officiel — Terminale SES</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <span class="source-num">2</span>
+          <div class="source-content">
+            <span class="source-title">Baromètre CEVIPOF de la confiance politique, vague 17</span>
+            <span class="source-detail">Sciences Po / CEVIPOF — Février 2026</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <span class="source-num">3</span>
+          <div class="source-content">
+            <span class="source-title">Sondage Elabe pour BFMTV / La Tribune Dimanche</span>
+            <span class="source-detail">Enquête réalisée du 25 au 27 mars 2026</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <span class="source-num">4</span>
+          <div class="source-content">
+            <span class="source-title">Sondage Ifop-Fiducial pour Sud Radio / Le Figaro</span>
+            <span class="source-detail">Février 2026</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <span class="source-num">5</span>
+          <div class="source-content">
+            <span class="source-title">Sondage Odoxa-Mascaret pour Public Sénat</span>
+            <span class="source-detail">Mars 2026</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <span class="source-num">6</span>
+          <div class="source-content">
+            <span class="source-title">Sondage Toluna Harris Interactive pour RTL-M6</span>
+            <span class="source-detail">22 mars 2026</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <span class="source-num">7</span>
+          <div class="source-content">
+            <span class="source-title">Baromètre Odoxa-Backbone Consulting pour Le Figaro</span>
+            <span class="source-detail">Décembre 2025</span>
+          </div>
+        </div>
+        <div class="source-item">
+          <span class="source-num">8</span>
+          <div class="source-content">
+            <span class="source-title">Données électorales INSEE — Présidentielle 2022</span>
+            <span class="source-detail">Institut national de la statistique et des études économiques</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -976,7 +1069,7 @@
     <!-- GLOSSAIRE -->
     <div style="margin-top: 2mm;">
       <div class="encadre-title">🔑 Définition des notions mobilisées</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm; font-family: 'Source Sans 3', sans-serif; font-size: 0.82rem; line-height: 1.5;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm; font-family: 'Source Sans 3', sans-serif; font-size: 0.98rem; line-height: 1.75;">
         <div>
           <p><strong>Abstention&nbsp;:</strong> Non-participation au vote malgré l'inscription électorale. Taux = (abstentionnistes / inscrits) × 100.</p>
           <p style="margin-top: 1.5mm;"><strong>Volatilité électorale&nbsp;:</strong> Variation des préférences et du vote d'un scrutin à l'autre.</p>
@@ -993,11 +1086,11 @@
     <hr class="filet">
 
     <!-- COLOPHON -->
-    <div style="text-align: center; margin-top: 3mm; padding: 3mm;">
-      <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--black);"><span style="font-size: 1rem; font-style: italic; font-weight: 400;">Le </span>Marché <span style="color: var(--red);">Politique</span></div>
-      <p style="font-family: 'Source Sans 3', sans-serif; font-size: 0.8rem; color: var(--medium-gray); margin-top: 1mm;">
+    <div style="text-align: center; margin-top: 4mm; padding: 4mm 3mm;">
+      <div style="font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--black);"><span style="font-size: 1.3rem; font-style: italic; font-weight: 400;">Le </span>Marché <span style="color: var(--red);">Politique</span></div>
+      <p style="font-family: 'Source Sans 3', sans-serif; font-size: 1rem; color: var(--medium-gray); margin-top: 2mm; line-height: 1.7;">
         Édition spéciale — Analyse SES — Chapitre 10 : Vote et participation électorale en France<br>
-      Mars 2026
+        Mars 2026
       </p>
     </div>
 
