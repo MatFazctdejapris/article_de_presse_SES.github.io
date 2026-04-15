@@ -2,7 +2,7 @@
 
 > Édition spéciale · Présidentielle 2027 · Chapitre 10 — Vote et participation électorale en France
 
-**🌐 Site en ligne :** [matfazctdejapris.github.io/article_de_presse_SES.github.io](https://LesCrokScooby.github.io/article_de_presse_SES.github.io/)
+**🌐 Site en ligne :** [matfazctdejapris.github.io/article_de_presse_SES.github.io](https://LesCroksScooby.github.io/article_de_presse_SES.github.io/)
 
 ---
 
